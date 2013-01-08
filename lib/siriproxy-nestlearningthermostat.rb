@@ -28,6 +28,11 @@ class SiriProxy::Plugin::NestLearningThermostat < SiriProxy::Plugin
     listen_for(/thermostat.*([0-9]{2})/i) { |temp| set_thermostat(temp) }
     listen_for(/nest.*([0-9]{2})/i) { |temp| set_thermostat(temp) }
     
+    #set fan status to 'on' or 'auto'  (need help coding this section)
+    #listen_for(/fan.*on/i) { set_fan_on_or_auto('on') }
+    #listen_for(/fan.*auto/i) { set_fan_on_or_auto('auto') }
+    #listen_for(/fan.*automatic/i) { set_fan_on_or_auto('auto') }
+    
     def login_to_nest
         loginRequest = HTTParty.post('https://home.nest.com/user/login',:body => { :username => self.nest_email, :password => self.nest_password }, :headers => { 'User-Agent' => 'Nest/1.1.0.10 CFNetwork/548.0.4' })
                 
