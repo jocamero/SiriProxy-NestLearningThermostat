@@ -104,9 +104,9 @@ class SiriProxy::Plugin::NestLearningThermostat < SiriProxy::Plugin
                         
                         ttt_string = get_time_to_target(statusResult, device_serial_id)
                         if ttt_string
-                            say "The #{thermostat_name} Nest is currently set to #{target_temp}° and will reach it in " + ttt_string + ". The current temperature is #{current_temp}°" + temperature_scale + " and the relative humidity is #{current_humidity}%."                           
+                            say "The #{thermostat_name} is currently set to #{target_temp}° and will reach it in " + ttt_string + ". The current temperature is #{current_temp}°" + temperature_scale + " and the relative humidity is #{current_humidity}%."                           
                         else
-                            say "The #{thermostat_name} Nest is currently set to #{target_temp}°. The current temperature is #{current_temp}°" + temperature_scale + " and the relative humidity is #{current_humidity}%."                           
+                            say "The #{thermostat_name} is currently set to #{target_temp}°. The current temperature is #{current_temp}°" + temperature_scale + " and the relative humidity is #{current_humidity}%."                           
                         end
                     end
                 else
@@ -210,7 +210,7 @@ class SiriProxy::Plugin::NestLearningThermostat < SiriProxy::Plugin
                     end
                                         
                     if tempRequest.code == 200
-                        say "Ok, I set the #{thermostat_name} Nest to #{temp}°. The current temperature is #{current_temp}°" + temperature_scale + "."                   
+                        say "Ok, I set the #{thermostat_name} to #{temp}°. The current temperature is #{current_temp}°" + temperature_scale + "."                   
                     else
                         say "Sorry, I couldn't set the temperature on the Nest."
                     end                    
